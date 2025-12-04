@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Guidance AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-glow"></div>
+    
+    <main class="container">
+        <header class="header">
+            <h1>Student Guidance <span class="gradient-text">AI</span></h1>
+            <p class="subtitle">Your personalized path to success</p>
+        </header>
+
+        <section id="input-section" class="card active">
+            <div class="card-header">
+                <div class="step-badge">1</div>
+                <h2>Tell us about yourself</h2>
+            </div>
+            
+            <form id="guidance-form">
+                <div class="form-group">
+                    <label for="branch">Branch / Background</label>
+                    <input type="text" id="branch" placeholder="e.g. Computer Science, Mechanical, High School..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="interests">Interests</label>
+                    <input type="text" id="interests" placeholder="e.g. Web Dev, Robotics, AI, Finance..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="availability">Time Availability (per week)</label>
+                    <select id="availability" required>
+                        <option value="" disabled selected>Select hours...</option>
+                        <option value="low">Less than 5 hours</option>
+                        <option value="medium">5 - 15 hours</option>
+                        <option value="high">15+ hours</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="skill-level">Current Skill Level</label>
+                    <div class="radio-group">
+                        <label class="radio-card">
+                            <input type="radio" name="skill-level" value="beginner" required>
+                            <span class="radio-content">Beginner</span>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="skill-level" value="intermediate">
+                            <span class="radio-content">Intermediate</span>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="skill-level" value="advanced">
+                            <span class="radio-content">Advanced</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary">
+                    Generate Roadmap
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+            </form>
+        </section>
+
+        <section id="results-section" class="card hidden">
+            <div class="card-header">
+                <div class="step-badge">2</div>
+                <h2>Your Personalized Plan</h2>
+                <button id="back-btn" class="btn-text">Edit Inputs</button>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <h3>Skills to Learn</h3>
+                    <ul id="skills-list" class="tags-list">
+                        <!-- Populated by JS -->
+                    </ul>
+                </div>
+
+                <div class="result-card full-width">
+                    <h3>Personalized Roadmap</h3>
+                    <div id="roadmap-container" class="roadmap">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <div class="result-card">
+                    <h3>Recommended Courses</h3>
+                    <ul id="courses-list" class="links-list">
+                        <!-- Populated by JS -->
+                    </ul>
+                </div>
+
+                <div class="result-card">
+                    <h3>Weekly Study Plan</h3>
+                    <div id="study-plan" class="study-plan-content">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
